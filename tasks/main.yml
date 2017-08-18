@@ -1,0 +1,5 @@
+---
+- include: rssh.yml
+  tags:
+    - add_rssh
+  when: '{{rssh is defined}}'

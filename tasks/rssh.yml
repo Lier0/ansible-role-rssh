@@ -1,0 +1,28 @@
+---
+- name: Ensure aptitude is installed
+  apt: name="aptitude" state="present"
+
+- name: Ensure rssh package is installed
+  tags: rssh
+  apt:
+    name: rssh
+    state: present
+    update_cache: yes
+  register: rssh_apt
+
+- block:
+  - name: Insert rssh into /etc/shells
+    lineinfile:
+      dest: /etc/shells
+      line: '/usr/bin/rssh'
+
+  - name: Applying rssh configuration
+    template:
+      src: rssh.conf.j2
+      dest: /etc/rssh.conf
+      owner: root
+      group: root
+      mode: 0644
+  tags: rssh
+  when: rssh_apt|success
+...
