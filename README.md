@@ -1,6 +1,6 @@
 # ansible-role-rssh
 
-[![Build Status](https://travis-ci.org/lier0/ansible-role-rssh.svg?branch=master)](https://travis-ci.org/lier0/ansible-role-rssh)
+[![Build Status](https://travis-ci.org/Lier0/ansible-role-rssh.svg?branch=master)](https://travis-ci.org/Lier0/ansible-role-rssh)
 
 Debian - Restricted shell for scp/sftp
 
